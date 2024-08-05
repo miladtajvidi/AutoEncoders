@@ -11,6 +11,8 @@ Our goal is to provide a comprehensive set of materials to help group members le
 4. CNN_autoencoder.py
 5. image_denoising.py
 6. VAE.py
+7. autoencoder_pytorch.py
+8. autoencoder_tensorflow.py
 
 
 
