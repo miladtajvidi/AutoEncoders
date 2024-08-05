@@ -14,5 +14,25 @@ Our goal is to provide a comprehensive set of materials to help group members le
 7. autoencoder_pytorch.py
 8. autoencoder_tensorflow.py
 
+## Getting Started
+
+To get started, clone this repository and explore the slides and code samples.
+Feel free to explore, modify, and experiment with the code.
+
+`git clone https://github.com/miladtajvidi/AutoEncoders.git`
+
+
+
+## Resources
+
+1. Generative Deep Learning with TensorFlow by DeepLearning.AI
+URL: https://www.coursera.org/learn/generative-deep-learning-with-tensorflow
+
+2. Building Autoencoders in Keras
+URL: https://blog.keras.io/building-autoencoders-in-keras.html 
+
+3. Variational Autoencoders by GeeksforGeeks
+URL: https://www.geeksforgeeks.org/variational-autoencoders/
+
 
 
