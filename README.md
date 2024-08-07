@@ -51,12 +51,15 @@ Feel free to explore, modify, and experiment with the code.
 
 ## Additional Resources
 
-1. Intro to Deep Learning and Generative Models Course by Sebastian Raschka (chapters L16.0 - L17.7)
+1. [Youtube Tutorials] Intro to Deep Learning and Generative Models Course by Sebastian Raschka (chapters L16.0 - L17.7)
 URL: https://youtube.com/playlist?list=PLTKMiZHVd_2KJtIXOW0zFhFfBaJJilH51&si=f6eyKXaq8Oo7glna
 Source Codes URL: https://github.com/rasbt/stat453-deep-learning-ss21
 
-2. Image Compression and Generation using Variational Autoencoders in Python
+2. [Coursera Guided Project] Image Compression and Generation using Variational Autoencoders in Python
 URL: https://www.coursera.org/projects/image-compression-generation-vae
+
+3. [TowardsDataScience Article] Intuitively Understanding Variational Autoencoders
+URL: https://towardsdatascience.com/intuitively-understanding-variational-autoencoders-1bfe67eb5daf
 
 
 ## References
