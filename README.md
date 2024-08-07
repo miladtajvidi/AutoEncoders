@@ -1,3 +1,10 @@
+<div style="display: flex; justify-content: center;">
+  <img src="./images/DL_Logo.png" alt="Alt text 1" width="100" height="100">
+  <img src="./images/g4g_Logo.png" alt="Alt text 2" width="100" height="100">
+  <img src="./images/keras_Logo.png" alt="Alt text 3" width="100" height="100">
+</div>
+
+
 # AutoEncoders
 
 This repository serves as a collection of slides, code samples, and resources put together for "Coding Gen AI from scratch - Session 3 : Variational Autoencoders (VAEs)". 
@@ -37,8 +44,12 @@ Feel free to explore, modify, and experiment with the code.
 
 ## Additional Resources
 
-1. Intro to Deep Learning and Generative Models Course by Sebastian Raschka
+1. Intro to Deep Learning and Generative Models Course by Sebastian Raschka (chapters L16.0 - L17.7)
 URL: https://youtube.com/playlist?list=PLTKMiZHVd_2KJtIXOW0zFhFfBaJJilH51&si=f6eyKXaq8Oo7glna
+Source Codes URL: https://github.com/rasbt/stat453-deep-learning-ss21
+
+2. Image Compression and Generation using Variational Autoencoders in Python
+URL: https://www.coursera.org/projects/image-compression-generation-vae
 
 
 ## References
