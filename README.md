@@ -5,7 +5,7 @@
 </div>
 
 
-# AutoEncoders
+# AutoEncoders (from simple to variational)
 
 This repository serves as a collection of slides, code samples, and resources put together for "Coding Gen AI from scratch - Session 3 : Variational Autoencoders (VAEs)". 
 Our goal is to provide a comprehensive set of materials to help group members learn and experiment with different generative methods.
