@@ -20,7 +20,9 @@ Our goal is to provide a comprehensive set of materials to help group members le
 6. VAE.py
 7. autoencoder_pytorch.py
 8. requirements.txt
-9. presentationSlides.pdf  
+9. presentationSlides2.pdf
+10. VAE_dist.py
+11. utils_VAE.py   
 
 
 ## Descriptions
@@ -40,6 +42,12 @@ Our goal is to provide a comprehensive set of materials to help group members le
 7. This code defines a simple autoencoder using PyTorch to compress and reconstruct images from the MNIST dataset. The model consists of a fully connected encoder and decoder, with the encoder reducing the dimensionality to 9 and the decoder reconstructing the original 784-dimensional images. The training process minimizes the mean squared error between the input and the reconstructed images, and the code includes visualization of both the loss over time and the original versus reconstructed images.
 ------------------------------------------------------------------------------------
 8. This file lists the dependencies needed for our project, including Keras, Matplotlib, NumPy, TensorFlow (version 2.0 or higher), PyTorch, TorchVision, and scikit-learn.
+------------------------------------------------------------------------------------
+9. Presentation Slides
+------------------------------------------------------------------------------------
+10. This code implements a Variational Autoencoder (VAE) using PyTorch, designed to model a custom probability distribution and generate new samples. The VAE architecture consists of an encoder that maps input data to a latent space, and a decoder that reconstructs the input from the latent variables. The reparameterization trick is used to sample from the latent space during training. The model is trained by minimizing a combination of reconstruction loss (MSE) and KL divergence. The training loop iterates over a custom dataset of randomly generated numbers, and the code includes functions to visualize the distribution of both original and generated samples.
+------------------------------------------------------------------------------------
+11. This code generates random samples from a custom probability distribution function (PDF) and visualizes the resulting data using Matplotlib. The custom PDF is a mixture of three Gaussian distributions with added sinusoidal modulation. The code includes functions to normalize the PDF, generate random numbers using rejection sampling, and plot the generated samples against the PDF. It is designed to create and display the distribution of the generated data alongside the theoretical PDF to assess the accuracy of the sampling process.
 
 ## Getting Started
 
@@ -51,27 +59,34 @@ Feel free to explore, modify, and experiment with the code.
 
 ## Additional Resources
 
-1. [Youtube Tutorials] Intro to Deep Learning and Generative Models Course by Sebastian Raschka (chapters L16.0 - L17.7)
-URL: https://youtube.com/playlist?list=PLTKMiZHVd_2KJtIXOW0zFhFfBaJJilH51&si=f6eyKXaq8Oo7glna
+1. [Youtube Tutorials] Intro to Deep Learning and Generative Models Course by Sebastian Raschka (chapters L16.0 - L17.7)<br>
+URL: https://youtube.com/playlist?list=PLTKMiZHVd_2KJtIXOW0zFhFfBaJJilH51&si=f6eyKXaq8Oo7glna<br>
 Source Codes URL: https://github.com/rasbt/stat453-deep-learning-ss21
 
-2. [Coursera Guided Project] Image Compression and Generation using Variational Autoencoders in Python
+2. [Coursera Guided Project] Image Compression and Generation using Variational Autoencoders in Python<br>
 URL: https://www.coursera.org/projects/image-compression-generation-vae
 
-3. [TowardsDataScience Article] Intuitively Understanding Variational Autoencoders
+3. [TowardsDataScience Article] Intuitively Understanding Variational Autoencoders<br>
 URL: https://towardsdatascience.com/intuitively-understanding-variational-autoencoders-1bfe67eb5daf
+
+4. [Textbook] Deep Learning by Ian Goodfellow, Yoshua Bengio, and Aaron Courville. MIT Press, 2016<br>
+chapter 14: Autoencoders <br>
+chapter 20: Deep Generative Models
 
 
 ## References
 
-1. Generative Deep Learning with TensorFlow by DeepLearning.AI
+1. Generative Deep Learning with TensorFlow by DeepLearning.AI<br>
 URL: https://www.coursera.org/learn/generative-deep-learning-with-tensorflow
 
-2. Building Autoencoders in Keras
+2. Building Autoencoders in Keras<br>
 URL: https://blog.keras.io/building-autoencoders-in-keras.html 
 
-3. Variational Autoencoders by GeeksforGeeks
+3. Variational Autoencoders by GeeksforGeeks<br>
 URL: https://www.geeksforgeeks.org/variational-autoencoders/
+
+4. Variational Autoencoders by Paul Hand
+URL: https://www.youtube.com/watch?v=c27SHdQr4lw
 
 
 
