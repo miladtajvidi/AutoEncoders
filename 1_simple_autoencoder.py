@@ -1,20 +1,25 @@
 import keras
 from keras import layers
-from keras.datasets import mnist
+from keras.datasets import mnist # type: ignore
 import numpy as np
 import matplotlib.pyplot as plt
-# to do --> quick intro to keras & layers
+from keras.models import Model # type: ignore
 
-'''ref: https://blog.keras.io/building-autoencoders-in-keras.html'''
 
-'''
+'''ref: https://blog.keras.io/building-autoencoders-in-keras.html
 a single fully-connected neural layer as encoder and as decoder
 '''
+''' Changes Made:
+1 - Intermediate Reconstructions: Added code to visualize intermediate outputs from the layer just before the final reconstruction.
+2 - Loss Plot: Added a plot to visualize training and validation loss over epochs.
+3 - Encoded Representations: If the encoding dimension is 2D or 3D, the code visualizes the encoded data in a scatter plot.
+'''
+
+
 # This is the size of our encoded representations
 encoding_dim = 32  # 32 floats -> compression of factor 24.5, assuming the input is 784 floats
 
-# to do --> why the relu & sigmoid activation functions
-# to do --> can we visualize the layers? add the code
+
 
 # This is our input image
 input_img = keras.Input(shape=(784,))
@@ -57,11 +62,21 @@ x_test = x_test.reshape((len(x_test), np.prod(x_test.shape[1:])))
 print(x_train.shape)
 print(x_test.shape)
 
-autoencoder.fit(x_train, x_train,
+history = autoencoder.fit(x_train, x_train,
                 epochs=50,
                 batch_size=256,
                 shuffle=True,
                 validation_data=(x_test, x_test))
+
+# Plotting loss curves
+plt.figure()
+plt.plot(history.history['loss'], label='Train Loss')
+plt.plot(history.history['val_loss'], label='Validation Loss')
+plt.title('Loss Curves')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.legend()
+plt.show()
 
 
 
@@ -69,6 +84,10 @@ autoencoder.fit(x_train, x_train,
 # Note that we take them from the *test* set
 encoded_imgs = encoder.predict(x_test)
 decoded_imgs = decoder.predict(encoded_imgs)
+
+# Intermediate layer visualization
+intermediate_layer_model = Model(inputs=autoencoder.input,
+                                 outputs=autoencoder.layers[-2].output)  # Outputs from the layer before final layer
 
 n = 10  # How many digits we will display
 plt.figure(figsize=(20, 4))
@@ -80,13 +99,32 @@ for i in range(n):
     ax.get_xaxis().set_visible(False)
     ax.get_yaxis().set_visible(False)
 
-    # Display reconstruction
-    ax = plt.subplot(2, n, i + 1 + n)
+    # Display intermediate reconstruction
+    intermediate_output = intermediate_layer_model.predict(np.array([x_test[i]]))
+    ax = plt.subplot(3, n, i + 1 + n)
+    plt.bar(range(encoding_dim), intermediate_output[0])
+    ax.get_xaxis().set_visible(False)
+    ax.get_yaxis().set_visible(False)
+
+    # Display final reconstruction
+    ax = plt.subplot(3, n, i + 1 + 2*n)
     plt.imshow(decoded_imgs[i].reshape(28, 28))
     plt.gray()
     ax.get_xaxis().set_visible(False)
     ax.get_yaxis().set_visible(False)
 plt.show()
+
+# Visualizing encoded representations (if encoding_dim is low)
+if encoding_dim <= 3:
+    plt.figure(figsize=(8, 6))
+    if encoding_dim == 2:
+        plt.scatter(encoded_imgs[:, 0], encoded_imgs[:, 1], c='blue')
+        plt.title('2D Encoded Representations')
+    elif encoding_dim == 3:
+        ax = plt.subplot(111, projection='3d')
+        ax.scatter(encoded_imgs[:, 0], encoded_imgs[:, 1], encoded_imgs[:, 2], c='blue')
+        ax.set_title('3D Encoded Representations')
+    plt.show()
 
 print(encoded_imgs.mean())
 
