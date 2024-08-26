@@ -90,8 +90,11 @@ URL: https://blog.keras.io/building-autoencoders-in-keras.html
 3. Variational Autoencoders by GeeksforGeeks<br>
 URL: https://www.geeksforgeeks.org/variational-autoencoders/
 
-4. Variational Autoencoders by Paul Hand
+4. Variational Autoencoders by Paul Hand <br>
 URL: https://www.youtube.com/watch?v=c27SHdQr4lw
+
+5. Variational Autoencoders explained — with PyTorch Implementation <br>
+URL: https://sannaperzon.medium.com/paper-summary-variational-autoencoders-with-pytorch-implementation-1b4b23b1763a
 
 
 
