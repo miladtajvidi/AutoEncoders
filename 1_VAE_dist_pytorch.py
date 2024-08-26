@@ -97,10 +97,11 @@ class VAE(nn.Module):
 
 # Loss function for VAE
 def vae_loss(reconstructed_x, x, mu, log_var):
+    beta = 0.005
     reconstruction_loss = nn.MSELoss()(reconstructed_x, x)
-
     kl_divergence = -0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp())
-    return reconstruction_loss + kl_divergence
+    loss = reconstruction_loss + beta * kl_divergence
+    return loss
 
     
 
@@ -110,7 +111,7 @@ def vae_loss(reconstructed_x, x, mu, log_var):
 n_epochs = 100
 batch_size = 128
 lr = 0.001
-z_dim = 3
+z_dim = 100
 
 # Load data
 dataset = NumbersDataset(samples)
@@ -143,15 +144,5 @@ plot_distribution(generated_samples.cpu().numpy().squeeze(), custom_pdf, x_range
 
 
 
-'''
-# beta = 0.005
-# z_dim = 100
-
-# beta = 0.1
-# kl_divergence = -0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp())
-# loss = reconstruction_loss + beta * kl_divergence
-# return loss
-
-'''
 
 
