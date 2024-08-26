@@ -73,6 +73,11 @@ URL: https://towardsdatascience.com/intuitively-understanding-variational-autoen
 chapter 14: Autoencoders <br>
 chapter 20: Deep Generative Models
 
+5. [Youtube Tutorials] Lecture 20: Generative Models II by Michigan Online <br>
+URL: https://www.youtube.com/watch?v=igP03FXZqgo&t=2182s
+
+
+
 
 ## References
 
